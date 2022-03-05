@@ -79,6 +79,12 @@ public final class Constants {
     // Use "RobotContainer.stick.getPOV(Constants.controller)" to get DPad angle
     // button Convey.java checks to reverse conveyor
 
+
+    //launcher constants 
+    public static final char m_launcher = 5;  
+
+
+
     public static final int bttn_reverse = button_RightBumper;
 
     // Drivetrain ports
@@ -185,5 +191,7 @@ public final class Constants {
     public static LinearSystem<N2, N2, N2> kDrivetrainPlant =
     LinearSystemId.identifyDrivetrainSystem(kVelocityLinear, 
         kAccelerationLinear, kVelocityAngular, kAccelerationAngular);
+
+
 
 }

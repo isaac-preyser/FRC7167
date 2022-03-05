@@ -1,23 +1,214 @@
-X,Y,Tangent X,Tangent Y,Fixed Theta,Reversed,Name
-0.76,-2.29,0.6,0.0,true,false,
-3.8,-2.25,0.85,-0.5,true,false,
-4.5,-3.0,0.0,-0.25,true,false,
-4.35,-3.55,-0.25,-0.25,true,false,
-3.85,-3.75,-0.25,0.0,true,false,
-3.35,-3.55,-0.25,0.25,true,false,
-3.2,-3.0,0.0,0.25,true,false,
-3.5,-2.5,0.25,0.25,true,false,
-5.0,-2.35,0.85,-0.35,true,false,
-6.7,-2.0,0.25,0.25,true,false,
-7.0,-1.5,0.0,0.25,true,false,
-6.75,-1.0,-0.25,0.25,true,false,
-6.180697828487301,-0.8901685682738314,-0.25,-0.0,true,false,
-5.75,-1.0,-0.25,-0.25,true,false,
-5.4,-1.5,0.0,-0.25,true,false,
-5.5,-2.0,0.25,-0.25,true,false,
-6.5,-3.3,0.25,-0.25,true,false,
-7.7,-3.7,1.0,0.0,true,false,
-8.4,-3.0,0.0,0.25,true,false,
-7.0,-2.2,-4.0,-0.3,true,false,
-4.1,-1.86,-2.0,-0.0,true,false,
-0.76,-2.29,-0.6,0.0,true,false,
+<xml version="1.0">
+<dashboard>
+	<widget field="r_encoder_rate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="386" y="198"/>
+	</widget>
+	<widget field="r_encoder_pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="391" y="148"/>
+	</widget>
+	<widget field="l_encoder_rate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="388" y="108"/>
+	</widget>
+	<widget field="l_encoder_pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="401" y="72"/>
+	</widget>
+	<widget field="Data" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="195" y="323"/>
+	</widget>
+	<widget field="targetCoordY:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="195" y="302"/>
+	</widget>
+	<widget field="targetCoordX:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="281"/>
+	</widget>
+	<widget field="gyroRate is:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="260"/>
+	</widget>
+	<widget field="gyroAngle is:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="239"/>
+	</widget>
+	<widget field="SendableChooser[1]" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="192" y="126"/>
+	</widget>
+	<widget field="l_UltDist:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="105"/>
+	</widget>
+	<widget field="UltAngle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="84"/>
+	</widget>
+	<widget field="lGroupPWM@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="63"/>
+	</widget>
+	<widget field="TrajectoryProgress@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="42"/>
+	</widget>
+	<widget field="r_UltDist:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="21"/>
+	</widget>
+	<widget field="Note On Running Autonomous: " type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="192" y="0"/>
+	</widget>
+	<widget field="rGroupPWM@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="38" y="0"/>
+	</widget>
+	<widget field="leftEnc Rate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="519"/>
+	</widget>
+	<widget field="PixyCam_Connection:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="498"/>
+	</widget>
+	<widget field="leftEnc Distance:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="183" y="477"/>
+	</widget>
+	<widget field="TeleOp speed is" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="179" y="425"/>
+		<height>20</height>
+	</widget>
+	<widget field="locatedTarget" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="189" y="456"/>
+	</widget>
+	<widget field="present" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="207" y="381"/>
+	</widget>
+	<widget field="rJoystick Inputs:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="214" y="403"/>
+	</widget>
+	<widget field="rightEnc Rate:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="167" y="358"/>
+		<height>20</height>
+	</widget>
+	<widget field="lJoystick Inputs:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="341" y="345"/>
+	</widget>
+	<widget field="ballCount@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="363" y="457"/>
+	</widget>
+	<widget field="rightEnc Distance:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="367" y="484"/>
+	</widget>
+	<widget field="SendableChooser[0]" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="2" y="304"/>
+	</widget>
+	<widget field="Turn@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="288"/>
+	</widget>
+	<widget field="Drive@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="267"/>
+	</widget>
+	<widget field="rEncRate@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="246"/>
+	</widget>
+	<widget field="lEncDist@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="225"/>
+	</widget>
+	<widget field="Confidence" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="204"/>
+	</widget>
+	<widget field="gyroAngle@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="183"/>
+	</widget>
+	<widget field="rEncDist@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="162"/>
+	</widget>
+	<widget field="rGroupVolts@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="141"/>
+	</widget>
+	<widget field="Proximity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="120"/>
+	</widget>
+	<widget field="Detected Color" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="99"/>
+	</widget>
+	<widget field="lGroupVolts@" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="78"/>
+	</widget>
+	<widget field="gyroRate@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="57"/>
+	</widget>
+	<widget field="lEncRate@ " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="36"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="5" y="3"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="5" y="3"/>
+	</static-widget>
+</dashboard>
+<live-window>
+	<widget field="Sub_Ultrasonics" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="138"/>
+	</widget>
+	<widget field="Sub_Gyroscope" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="115"/>
+	</widget>
+	<widget field="Sub_Encoders" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="92"/>
+	</widget>
+	<widget field="Sub_ColourSensor" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="69"/>
+	</widget>
+	<widget field="Sub_DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="46"/>
+	</widget>
+	<widget field="Sub_RobotOD" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="23"/>
+	</widget>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="PowerDistributionPanel[0]" type="PowerDistributionPanel" class="edu.wpi.first.smartdashboard.livewindow.elements.PowerDistributionPanel">
+			<location x="6" y="16"/>
+			<height>194</height>
+			<width>340</width>
+		</widget>
+		<widget field="Encoder[1]" type="Encoder" class="edu.wpi.first.smartdashboard.livewindow.elements.EncoderDisplay">
+			<location x="6" y="210"/>
+			<height>97</height>
+			<width>340</width>
+		</widget>
+		<widget field="DigitalOutput[28]" type="Digital Output" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="103" y="307"/>
+			<height>23</height>
+			<width>145</width>
+		</widget>
+		<widget field="DigitalInput[26]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="6" y="330"/>
+			<height>20</height>
+			<width>340</width>
+		</widget>
+		<widget field="DigitalInput[27]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="6" y="350"/>
+			<height>20</height>
+			<width>340</width>
+		</widget>
+		<widget field="Ultrasonic[3]" type="Ultrasonic" class="edu.wpi.first.smartdashboard.livewindow.elements.SingleNumberDisplay">
+			<location x="6" y="370"/>
+			<height>20</height>
+			<width>340</width>
+		</widget>
+		<widget field="Encoder[0]" type="Encoder" class="edu.wpi.first.smartdashboard.livewindow.elements.EncoderDisplay">
+			<location x="6" y="390"/>
+			<height>97</height>
+			<width>340</width>
+		</widget>
+		<widget field="Ultrasonic[1]" type="Ultrasonic" class="edu.wpi.first.smartdashboard.livewindow.elements.SingleNumberDisplay">
+			<location x="6" y="487"/>
+			<height>20</height>
+			<width>340</width>
+		</widget>
+		<widget field="PIDController[1]" type="PIDController" class="edu.wpi.first.smartdashboard.gui.elements.PIDEditor">
+			<location x="6" y="507"/>
+			<height>155</height>
+			<width>340</width>
+		</widget>
+		<widget field="PIDController[2]" type="PIDController" class="edu.wpi.first.smartdashboard.gui.elements.PIDEditor">
+			<location x="6" y="662"/>
+			<height>155</height>
+			<width>340</width>
+		</widget>
+		<location x="0" y="0"/>
+		<width>352</width>
+		<height>823</height>
+	</widget>
+</live-window>
+	<hidden field="Field"/>
+</xml>

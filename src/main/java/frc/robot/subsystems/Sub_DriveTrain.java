@@ -49,7 +49,7 @@ public class Sub_DriveTrain extends SubsystemBase {
     mc_rightBack = new Spark(Constants.m_rightBack);
 
     mc_leftGroup = new SpeedControllerGroup(mc_leftFront, mc_leftBack);
-    mc_rightGroup = new SpeedControllerGroup(mc_rightFront, mc_rightBack);
+    mc_rightGroup = new SpeedControllerGroup(mc_rightFront, mc_rightBack); //might have to invert this 
 
     diffDrive = new DifferentialDrive(mc_leftGroup, mc_rightGroup);
   }

@@ -18,9 +18,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
+import frc.robot.commands.Auto;
 import frc.robot.commands.AutoGsearch;
 import frc.robot.commands.DegreesRotate;
 import frc.robot.commands.ManualOverride;
+// import frc.robot.commands.ShooterUp;
 import frc.robot.commands.ToggleDriveMode;
 import frc.robot.commands.ToggleSpeed;
 import frc.robot.subsystems.Sub_ColourSensor;
@@ -28,6 +30,7 @@ import frc.robot.subsystems.Sub_DriveTrain;
 import frc.robot.subsystems.Sub_Encoders;
 import frc.robot.subsystems.Sub_Gyroscope;
 import frc.robot.subsystems.Sub_RobotOD;
+// import frc.robot.subsystems.Sub_Shooter;
 import frc.robot.subsystems.Sub_Ultrasonics;
 
 /**
@@ -54,6 +57,9 @@ public class RobotContainer {
   public static AutoGsearch autoSearch = new AutoGsearch();
   public static Sub_Ultrasonics ultrasonics = new Sub_Ultrasonics();
   public static Sub_ColourSensor colourSensor = new Sub_ColourSensor();
+  // public static final Sub_Shooter shooter = new Sub_Shooter();
+  // public static Sub_Launcher launcher= new Sub_Launcher(); 
+  private final Auto m_autoCommand = new Auto(driveTrain); 
 
   // Universal Robot control config
   public static Joystick stick = new Joystick(Constants.controller);
@@ -133,7 +139,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    return autoSearch;
+      return m_autoCommand; 
   }
 
 }

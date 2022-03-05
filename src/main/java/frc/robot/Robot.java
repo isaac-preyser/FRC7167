@@ -10,11 +10,13 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.subsystems.Sub_DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +29,10 @@ public class Robot extends TimedRobot {
 
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
+  public double autoTimer;
+  double turn = 0;
+  double speed = -0.5; 
+  static Sub_DriveTrain driveTrain = RobotContainer.driveTrain;
 
   public static ArcadeDrive defaultDrive = new ArcadeDrive();
 
@@ -86,9 +92,9 @@ public class Robot extends TimedRobot {
   public void disabledPeriodic() {
     Constants.autoSpeed = RobotContainer.choose_autoRouteSpd.getSelected();
 
-    if(Constants.autoSpeed != Constants.teleOperation && !RobotContainer.odometry.traJState) {
+    if (Constants.autoSpeed != Constants.teleOperation && !RobotContainer.odometry.traJState) {
       RobotContainer.odometry.iniTrajectories(Constants.traJAutoPaths, Constants.autoSpeed);
-    } else if(Constants.autoSpeed == Constants.teleOperation && RobotContainer.odometry.traJState) {
+    } else if (Constants.autoSpeed == Constants.teleOperation && RobotContainer.odometry.traJState) {
       RobotContainer.odometry.resetTraj(Constants.traJAutoPaths);
     }
   }
@@ -99,17 +105,22 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
-    Constants.autoRoute = RobotContainer.choose_autoRouteDR.getSelected();
-    RobotContainer.encoders.setDistanceScale(RobotContainer.encoders.distancePerPulse);
-
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null && RobotContainer.odometry.traJState) {
-      m_autonomousCommand.schedule();
-    } else {
-      DriverStation.reportWarning("Please Select an Autonomous Trajectory and Speed in SmartDashBoard", false);
-    }
+    autoTimer = Timer.getFPGATimestamp(); // get the current time in ms to see if autonomous needs to be stopped.
+    /*
+     * m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+     * 
+     * 
+     * Constants.autoRoute = RobotContainer.choose_autoRouteDR.getSelected();
+     * RobotContainer.encoders.setDistanceScale(RobotContainer.encoders.
+     * distancePerPulse);
+     * 
+     * // schedule the autonomous command (example) if (m_autonomousCommand != null
+     * && RobotContainer.odometry.traJState) { m_autonomousCommand.schedule(); }
+     * else { DriverStation.
+     * reportWarning("Please Select an Autonomous Trajectory and Speed in SmartDashBoard"
+     * , false); }
+     */
+    // above is from old code ^^
   }
 
   /**
@@ -117,6 +128,14 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    if (Timer.getFPGATimestamp() < autoTimer + 5) {
+
+      driveTrain.drive(speed, turn, true);
+
+    } else {
+      driveTrain.drive(0, 0, true);
+    }
+
   }
 
   @Override
@@ -166,4 +185,8 @@ public class Robot extends TimedRobot {
       System.out.println("MANUAL CONTROL");
     }
   }
+
+
+
+
 }

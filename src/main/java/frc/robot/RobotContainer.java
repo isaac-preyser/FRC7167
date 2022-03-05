@@ -59,7 +59,7 @@ public class RobotContainer {
   public static Sub_ColourSensor colourSensor = new Sub_ColourSensor();
   // public static final Sub_Shooter shooter = new Sub_Shooter();
   // public static Sub_Launcher launcher= new Sub_Launcher(); 
-  private final Auto m_autoCommand = new Auto(driveTrain); 
+  private final Auto m_autoCommand = new Auto(); 
 
   // Universal Robot control config
   public static Joystick stick = new Joystick(Constants.controller);
@@ -140,6 +140,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
       return m_autoCommand; 
+      
   }
 
 }

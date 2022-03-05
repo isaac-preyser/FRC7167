@@ -6,14 +6,15 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.Sub_DriveTrain;
 
 public class Auto extends CommandBase {
   /** Creates a new Auto. */
   Sub_DriveTrain driveTrain; 
 
-  public Auto(Sub_DriveTrain driveTrain) {
-    driveTrain = new Sub_DriveTrain();
+  public Auto() {
+      driveTrain = RobotContainer.driveTrain; 
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -30,8 +31,9 @@ public class Auto extends CommandBase {
     final double turn = 0;  
     double speed = -0.5;
     driveTrain.drive(speed, turn, true);
-    Timer.delay(5);
-    driveTrain.drive(0, 0, true);
+  
+   // Timer.delay(5);
+    //driveTrain.drive(0, 0, true);
 
 
 

@@ -29,8 +29,8 @@ public class ArcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double turn = -RobotContainer.stick.getRawAxis(Constants.joy_left_y);
-    double speed = -RobotContainer.stick.getRawAxis(Constants.joy_right_x);
+    double speed = -RobotContainer.stick.getRawAxis(Constants.joy_left_y);
+    double turn = -RobotContainer.stick.getRawAxis(Constants.joy_right_x);
     
     speed = -speed*RobotContainer.driveTrain.speeds[RobotContainer.driveTrain.speedMode][0];
     turn = turn*RobotContainer.driveTrain.speeds[RobotContainer.driveTrain.speedMode][1];
